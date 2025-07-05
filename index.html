@@ -1,33 +1,2220 @@
 <!DOCTYPE html>
-<html style="height:100%;">
+<html lang="en-US">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script type="text/javascript">
+        document.documentElement.className = "js";
+    </script>
+
+    <title>New In ML at ICML 2025</title>
+
+    <link rel="stylesheet" id="base-css" href="./css/base.css?ver=6.0.2" type="text/css" media="none"
+        onload="media='all'" />
+
+    <script type="text/javascript">
+        let jqueryParams = [],
+            jQuery = function (r) {
+                return (jqueryParams = [...jqueryParams, r]), jQuery;
+            },
+            $ = function (r) {
+                return (jqueryParams = [...jqueryParams, r]), $;
+            };
+        (window.jQuery = jQuery), (window.$ = jQuery);
+        let customHeadScripts = !1;
+        (jQuery.fn = jQuery.prototype = {}),
+            ($.fn = jQuery.prototype = {}),
+            (jQuery.noConflict = function (r) {
+                if (window.jQuery)
+                    return (
+                        (jQuery = window.jQuery), ($ = window.jQuery), (customHeadScripts = !0), jQuery.noConflict
+                    );
+            }),
+            (jQuery.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            ($.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            (jQuery.load = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            ($.load = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            (jQuery.fn.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            ($.fn.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            });
+    </script>
+
+    <style id="wp-block-library-theme-inline-css" type="text/css"></style>
+    <style id="global-styles-inline-css" type="text/css"></style>
+    <link rel="stylesheet" id="ts_fab_css-css" href="./css/ts-fab.min.css?ver=1.5" type="text/css" media="all" />
+    <link rel="stylesheet" id="divi-style-css" href="./css/style-static.min.css?ver=4.17.6" type="text/css"
+        media="all" />
+    <script type="text/javascript" src="./js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+    <script type="text/javascript" id="jquery-js-after">
+        jqueryParams.length &&
+            $.each(jqueryParams, function (e, r) {
+                if ("function" == typeof r) {
+                    var n = String(r);
+                    n.replace("$", "jQuery");
+                    var a = new Function("return " + n)();
+                    $(document).ready(a);
+                }
+            });
+    </script>
+    <script type="text/javascript" src="./js/ts-fab.min.js?ver=1.5" id="ts_fab_js-js"></script>
+
+    <link rel="shortcut icon" href="img/newinml-fav.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
     <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
+        .dropdown-menu {
+            width: 250px !important;
         }
 
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+        .dropdown-menu li a {
+            white-space: nowrap;
+        }
+
+        /* 统一字体样式 */
+        * {
+            font-family: 'Open Sans', Arial, sans-serif !important;
+        }
+
+        /* 确保所有文本元素使用统一字体 */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        div,
+        a,
+        li,
+        ul,
+        ol,
+        table,
+        td,
+        th,
+        input,
+        textarea,
+        select,
+        button {
+            font-family: 'Open Sans', Arial, sans-serif !important;
+        }
+
+        /* 代码块保持等宽字体 */
+        code,
+        pre {
+            font-family: 'Courier New', monospace !important;
+        }
+
+        /* 图标字体保持不变 */
+        .et-pb-icon,
+        .et-social-icon,
+        [class*="fa-"] {
+            font-family: inherit !important;
+        }
+
+        /* 覆盖所有可能的字体类 */
+        .et_pb_text_0,
+        .et_pb_text_1,
+        .et_pb_text_2,
+        .et_pb_text_3,
+        .et_pb_text_4,
+        .et_pb_text_5,
+        .et_pb_text_6,
+        .et_pb_text_7,
+        .et_pb_text_8,
+        .et_pb_text_9,
+        .et_pb_text_10,
+        .et_pb_text_11,
+        .et_pb_text_12,
+        .et_pb_text_13,
+        .et_pb_text_14,
+        .et_pb_text_15,
+        .et_pb_text_16,
+        .et_pb_text_17,
+        .et_pb_text_18,
+        .et_pb_text_19,
+        .et_pb_text_20,
+        .et_pb_text_21,
+        .et_pb_text_22,
+        .et_pb_text_23,
+        .et_pb_text_24,
+        .et_pb_text_25,
+        .et_pb_text_26,
+        .et_pb_text_27,
+        .et_pb_text_28,
+        .et_pb_text_29,
+        .et_pb_text_30,
+        .et_pb_text_95,
+        .et_pb_text_96,
+        .et_pb_text_97,
+        .et_pb_text_98,
+        .et_pb_text_99,
+        .et_pb_text_100,
+        .et_pb_text_101,
+        .et_pb_text_102 {
+            font-family: 'Open Sans', Arial, sans-serif !important;
+        }
+
+        /* 减少section的上下空白 */
+        .et_pb_section_1.et_pb_section {
+            padding-bottom: 10px !important;
+        }
+
+        .et_pb_section_2.et_pb_section {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .et_pb_section_3.et_pb_section {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .et_pb_section_4.et_pb_section {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .et_pb_section_5.et_pb_section {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+
+        /* 减少row的padding，让内容更紧凑 */
+        .et_pb_row_1.et_pb_row,
+        .et_pb_row_2.et_pb_row,
+        .et_pb_row_4.et_pb_row {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+
+        .et_pb_row_17.et_pb_row,
+        .et_pb_row_16.et_pb_row,
+        .et_pb_row_11.et_pb_row,
+        .et_pb_row_10.et_pb_row,
+        .et_pb_row_14.et_pb_row,
+        .et_pb_row_12.et_pb_row,
+        .et_pb_row_18.et_pb_row,
+        .et_pb_row_19.et_pb_row,
+        .et_pb_row_13.et_pb_row,
+        .et_pb_row_15.et_pb_row,
+        .et_pb_row_9.et_pb_row,
+        .et_pb_row_6.et_pb_row,
+        .et_pb_row_8.et_pb_row,
+        .et_pb_row_7.et_pb_row {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+
+        /* Abstract toggle styles */
+        .abstract-toggle {
+            cursor: pointer;
+            color: #007bff;
+            font-weight: 500;
+            margin-top: 8px;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+
+        .abstract-toggle:hover {
+            color: #0056b3;
+        }
+
+        .abstract-toggle .arrow {
+            margin-right: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .abstract-toggle.expanded .arrow {
+            transform: rotate(90deg);
+        }
+
+        .abstract-content {
+            margin-top: 10px;
         }
     </style>
-    <link rel="shortcut icon" href="img/newinml-fav-2025.png"/>
-    <title>NewInML</title>
 </head>
 
-<body>
+<body
+    class="page-template-default page page-id-324 et_divi_builder et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_pb_footer_columns4 et_cover_background et_pb_gutter linux et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <div id="page-container">
+        <!-- ***************************************************** Workshop header ***************************************************** -->
+        <!-- ***************************************************** Workshop header ***************************************************** -->
+        <!-- ***************************************************** Workshop header ***************************************************** -->
+        <!-- ***************************************************** Workshop header ***************************************************** -->
 
-    <iframe src="https://newinml.github.io/NewInML2025ICML/"></iframe>
+        <header id="main-header" data-height-onload="66">
+            <div class="container clearfix et_menu_container">
+                <div class="logo_container">
+                    <span class="logo_helper"></span>
+                    <a href="#">
+                        <img src="./img/ICML-logo.svg" width="93" height="43" alt="Decision Making" id="logo"
+                            data-height-percentage="54" />
+                    </a>
+                </div>
+                <div id="et-top-navigation" data-height="66" data-fixed-height="40">
+                    <nav id="top-menu-nav">
+                        <ul id="top-menu" class="nav">
+                            <!--                        <li id="menu-item-186"-->
+                            <!--                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-186">-->
+                            <!--                            <a href="#">Home</a>-->
+                            <!--                        </li>-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Previous Workshops </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="https://nehzux.github.io/NewInML2023NeurIPS">NewInML at NeurIPS
+                                            2024</a>
+                                    </li>
+                                    <li><a href="newinml2023.html">NewInML at NeurIPS 2023</a></li>
+                                    <li>
+                                        <a href="https://nehzux.github.io/NewInML2022NeurIPS/">NewInML at NeurIPS
+                                            2022</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ablacan.github.io/NewInML2022_ICML/">NewInML at ICML 2022</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nehzux.github.io/NewInML2019/">NewInML at NeurIPS 2019</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
 
+                    <!-- <div id="et_top_search">
+                <span id="et_search_icon"></span>
+            </div> -->
+
+                    <div id="et_mobile_nav_menu">
+                        <div class="mobile_nav closed">
+                            <span class="select_page">Select Page</span>
+                            <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- #et-top-navigation -->
+            </div>
+            <!-- .container -->
+            <!-- <div class="et_search_outer">
+        <div class="container et_search_form_container">
+            <form role="search" method="get" class="et-search-form" action="https://tripods.cis.cornell.edu/">
+                <input type="search" class="et-search-field" placeholder="Search &hellip;" value="" name="s"
+                    title="Search for:" />
+            </form>
+            <span class="et_close_search_field"></span>
+        </div>
+    </div> -->
+        </header>
+        <!-- #main-header -->
+        <div id="et-main-area">
+            <div id="main-content">
+                <article id="post-324" class="post-324 page type-page status-publish hentry">
+                    <div class="entry-content">
+                        <div class="et-l et-l--post">
+                            <div class="et_builder_inner_content et_pb_gutters3">
+                                <!-- ***************************************************** Workshop Brief ***************************************************** -->
+                                <!-- ***************************************************** Workshop Brief ***************************************************** -->
+                                <!-- ***************************************************** Workshop Brief ***************************************************** -->
+                                <!-- ***************************************************** Workshop Brief ***************************************************** -->
+                                <div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular">
+                                    <div class="et_pb_row et_pb_row_0 et_pb_equal_columns">
+                                        <div
+                                            class="et_pb_column et_pb_column_4_4 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_0 et_animated et_pb_text_align_left et_pb_bg_layout_dark">
+                                                <div class="et_pb_text_inner">
+                                                    <h1>
+                                                        <span style="font-size: xx-large">New In
+                                                            ML at ICML 2025</span>
+                                                    </h1>
+                                                    <!--                                                    <h1><span-->
+                                                    <!--                                                            style="font-size: x-large; font-family: inherit; font-weight: normal;"><strong><i>"Do-->
+                                                    <!--                                                                    the right thing": machine learning and causal-->
+                                                    <!--                                                                    inference for improved decision-->
+                                                    <!--                                                                    making</i></strong></span></h1>-->
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_1 et_animated et_pb_text_align_left et_pb_bg_layout_dark">
+                                                <div class="et_pb_text_inner">
+                                                    <p>
+                                                        <span style="font-size: large">NewInML
+                                                            will be held at ICML 2025 on
+                                                            <span style="color: red">July 15, 2025!</span> Location:
+                                                            <span style="color: red">Vancouver Convention Center</span>.
+                                                            <br />
+                                                            <p>
+                                                                100% submissions will be accepted and will get high
+                                                                quality reviews from reviewers.
+                                                                We are here to help! The submissions are non archival.
+                                                                Feel free to submit elsewhere in the future!
+                                                                We are updating the website frequently. Stay tuned! If
+                                                                you have any question, please contact us by:
+                                                                <a
+                                                                    href="mailto:contactnewinml@gmail.com">contactnewinml@gmail.com</a>;
+                                                                join our <a href="https://discord.gg/78FCpRPdUU"
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer">Discord</a>.
+                                                            </p>
+                                                            <p>If you are interested in helping organize next NewInML,
+                                                                please sign up the <a
+                                                                    href="https://forms.gle/oyedWiU9RBhrdiEi6"
+                                                                    target="_blank" rel="noopener noreferrer">form</a>
+                                                            </p>
+                                                            <p style="font-size: small;"><sup>*</sup>Excluding
+                                                                submissions that are not serious.
+                                                                For example: blank pages, topics not in machine learning
+                                                                and papers completely not following the format.</p>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ***************************************************** Workshop Summary ***************************************************** -->
+                                <!-- ***************************************************** Workshop Summary ***************************************************** -->
+                                <!-- ***************************************************** Workshop Summary ***************************************************** -->
+                                <!-- ***************************************************** Workshop Summary ***************************************************** -->
+                                <!-- ***************************************************** Workshop Summary ***************************************************** -->
+                                <div class="et_pb_section et_pb_section_1 et_section_regular">
+                                    <div class="et_pb_row et_pb_row_1 et_pb_gutters1">
+                                        <div
+                                            class="et_pb_column et_pb_column_4_4 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
+                                                <!-- <div class="et_pb_text_inner">
+                                                        <h1>
+                                                            <b>Workshop <span style="color: #000000">Summary</span></b>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light"
+                                                > -->
+                                                <!-- <div class="et_pb_text_inner">
+                                                        <p style="text-align: justify">
+                                                            <span style="font-size: medium"
+                                                                >With the booming research in artificial intelligence,
+                                                                the community is welcoming every day many newcomers. A
+                                                                lack of mentoring and inclusive environment becomes
+                                                                gradually significant. Our goal is to welcome new
+                                                                researchers in the community and provide them with some
+                                                                guidance to contribute to Machine Learning research
+                                                                fully and effectively.</span
+                                                            >
+                                                        </p>
+                                                    </div> -->
+                                                <!-- <div
+                                                        class="et_pb_module et_pb_divider et_pb_divider_1 et_pb_divider_position_center et_pb_space"
+                                                    >
+                                                        <div class="et_pb_divider_internal"></div>
+                                                    </div> -->
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h1>
+                                                        <b>Our Mission </b>
+                                                    </h1>
+                                                </div>
+                                                <div
+                                                    class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
+                                                    <div class="et_pb_text_inner">
+                                                        <p style="text-align: justify; font-size: medium">
+                                                            Is this your first time to a top conference? Have you
+                                                            ever wanted your own work recognized by this huge and
+                                                            active community?
+                                                        </p>
+
+                                                        <p style="text-align: justify; font-size: medium">
+                                                            Do you encounter difficulties in polishing your ideas,
+                                                            experiments, paper writing, etc? Then, this session is
+                                                            exactly for you!
+                                                        </p>
+
+                                                        <p style="text-align: justify; font-size: medium">
+                                                            This year, we are hosting again the
+                                                            New in ML workshop at ICML 2025.
+                                                            This workshop is intended for anyone who has not
+                                                            published a paper at a top conference yet (e.g.
+                                                            ICML, NeurIPS). We invited top researchers to review
+                                                            your work and share their experience with you. The
+                                                            best papers will get oral presentations and awards!
+                                                        </p>
+
+                                                        <p style="text-align: justify; font-size: medium">
+                                                            Our biggest goal is to help you publish papers at the
+                                                            next ICML conference, and generally provide you with the
+                                                            guidance you need to contribute to ML research fully and
+                                                            effectively!
+                                                        </p>
+
+                                                        <p style="text-align: justify; font-size: medium">
+                                                            Within quota limits, the authors of the
+                                                            best
+                                                            accepted papers may be receiving tickets to ICML
+                                                            2025,
+                                                            to be attributed according to merit and need.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_divider et_pb_divider_1 et_pb_divider_position_center et_pb_space">
+                                                <div class="et_pb_divider_internal"></div>
+                                            </div>
+
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h1>
+                                                        <b>Submission
+                                                            <span style="color: #000000">Information</span></b>
+                                                    </h1>
+                                                </div>
+                                                <div
+                                                    class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
+                                                    <ul style="text-align: justify; font-size: medium">
+                                                        <li>
+                                                            Submission deadline: June 10, 2025
+                                                            (AoE)
+                                                        </li>
+                                                        <li>
+                                                            Submission link:
+                                                            <a href="https://openreview.net/group?id=ICML.cc/2025/Workshop/NewInML"
+                                                                target="_blank">OpenReview</a>
+                                                        </li>
+                                                        <li>
+                                                            Submission format: ICML (<a
+                                                                href="https://www.overleaf.com/latex/templates/icml2025-template/dhxrkcgkvnkt"
+                                                                target="_blank">template</a>)
+                                                        </li>
+                                                        <li>Review Anonymity: Double blind</li>
+                                                        <li>All requirements, including the page limit, follow
+                                                            <a href="https://icml.cc/Conferences/2025/CallForPapers"
+                                                                target="_blank">ICML main conference
+                                                                guidelines</a>.
+                                                        </li>
+                                                    </ul>
+                                                    <p style="text-align: justify">
+                                                        <span style="font-size: medium">This workshop WILL NOT
+                                                            reject any submissions. All
+                                                            submitted papers will receive constructive comments from
+                                                            reviewers, who will provide suggestions for improvement.
+                                                            This process allows authors to become more familiar with
+                                                            the submission and review workflow.
+                                                        </span>
+                                                    </p>
+                                                    <p style="text-align: justify">
+                                                        <span style="font-size: medium">What to do when you receive the
+                                                            results: since we have a large enough room, we hope everyone
+                                                            can benefit from the workshop by receiving feedback and
+                                                            having the opportunity to showcase their work. This will
+                                                            help participants further improve their research toward
+                                                            meeting main conference standards in the future. Therefore,
+                                                            we have decided:
+                                                            <ul style="text-align: justify; font-size: medium;">
+                                                                <li>Papers marked as "Accepted (Poster)" are strongly
+                                                                    encouraged to bring a poster on-site at our
+                                                                    workshop, as the reviewers believe these papers are
+                                                                    already mature enough to be presented.</li>
+                                                                <li>For papers marked as "Accepted", if you feel your
+                                                                    work is also ready for discussion and you would like
+                                                                    to share it and receive feedback, you are very
+                                                                    welcome to present a poster on-site at our workshop
+                                                                    as well.</li>
+                                                            </ul>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ***************************************************** Invited Speakers ***************************************************** -->
+                                <!-- ***************************************************** Invited Speakers ***************************************************** -->
+                                <!-- ***************************************************** Invited Speakers ***************************************************** -->
+                                <!-- ***************************************************** Invited Speakers ***************************************************** -->
+                                <!-- ***************************************************** Invited Speakers ***************************************************** -->
+
+                                <div class="et_pb_section et_pb_section_4 et_section_regular">
+                                    <div class="et_pb_row et_pb_row_new">
+                                        <div
+                                            class="et_pb_column et_pb_column_4_4 et_pb_column_new et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_new et_pb_text_align_left et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+
+                                                    <h1><b>🏆 Best Paper Award </b></h1>
+
+                                                    <p style="text-align: justify; font-size: medium;">
+                                                        Title: S<sup>2</sup>Edit: Text-Guided Image
+                                                        Editing with Precise Semantic and Spatial Control<br>
+                                                        Author(s): Xudong Liu, Zikun Chen, Ruowei
+                                                        Jiang, Ziyi Wu, Kejia Yin, Han Zhao, Parham Aarabi, Igor
+                                                        Gilitschenski
+                                                    </p>
+                                                    <p style="text-align: justify; font-size: medium;">
+                                                        Title: Unlocking Chemical Insights: Superior
+                                                        Molecular Representations from Intermediate Encoder Layers<br>
+                                                        Author(s): Luis Pinto
+                                                    </p>
+                                                    <p style="text-align: justify; font-size: medium;">
+                                                        Title: ScoreMix: Improving Face Recognition via
+                                                        Score Composition in Diffusion Generators<br>
+                                                        Author(s): Parsa Rahimi, Sébastien Marcel
+                                                    </p>
+                                                    <p style="text-align: justify; font-size: medium;">
+                                                        Title: Modeling User Behavior from Adaptive
+                                                        Surveys with Supplemental Context<br>
+                                                        Author(s): Aman Shukla, Daniel Patrick
+                                                        Scantlebury, Rishabh Kumar
+                                                    </p>
+                                                    <p style="text-align: justify; font-size: medium;">
+                                                        All of them will be presenting their paper during our workshop
+                                                        (see program schedule below). We also provide each team with a
+                                                        free ticket for ICML. Congratulations!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular">
+                                    <div class="et_pb_row et_pb_row_2">
+                                        <div
+                                            class="et_pb_column et_pb_column_4_4 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_4 et_pb_text_align_left et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h1><b>Invited Speakers</b></h1>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_5 et_pb_text_align_left et_pb_bg_layout_light">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="et_pb_row et_pb_row_3">
+                                        <!-- Siva Reddy - 1st -->
+                                        <div
+                                            class="et_pb_column et_pb_column_1_5 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
+                                            <div class="et_pb_module et_pb_image et_pb_image_0 et_animated et-waypoint">
+                                                <a href="https://sivareddy.in/" target="_blank"><span
+                                                        class="et_pb_image_wrap has-box-shadow-overlay">
+                                                        <div class="box-shadow-overlay"></div>
+                                                        <img width="200" height="270" src="img/siva-reddy.jpeg" alt=""
+                                                            title="" class="wp-image-369"
+                                                            style="object-fit: cover; width: 200px; height: 220px" />
+                                                    </span></a>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_center et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h3><b>Siva Reddy</b></h3>
+                                                    <p>
+                                                        <span style="font-weight: 400">Assistant Professor, McGill
+                                                            University, School of
+                                                            Computer Science and Department of Linguistics,
+                                                            <br />Mila - Quebec AI Institute</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Vered Shwartz - 2nd -->
+                                        <div
+                                            class="et_pb_column et_pb_column_1_5 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough">
+                                            <div class="et_pb_module et_pb_image et_pb_image_1 et_animated et-waypoint">
+                                                <a href="https://www.cs.ubc.ca/~vshwartz/" target="_blank"><span
+                                                        class="et_pb_image_wrap has-box-shadow-overlay">
+                                                        <div class="box-shadow-overlay"></div>
+                                                        <img width="200" height="270" src="img/vered.jpg" alt=""
+                                                            title="" srcset="img/vered.jpg 250w, img/vered.jpg 200w"
+                                                            sizes="(max-width: 250px) 100vw, 250px" class="wp-image-369"
+                                                            style="
+                                                                    object-fit: cover;
+                                                                    transform: translateX(-4px) scale(1.05);
+                                                                    width: 200px;
+                                                                    height: 220px;
+                                                                " />
+                                                    </span></a>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h3><b>Vered Shwartz</b></h3>
+                                                    <p>
+                                                        <span style="font-weight: 400">Assistant Professor, Computer
+                                                            Science, University of
+                                                            British Columbia</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Yi Wu - 3rd -->
+                                        <div
+                                            class="et_pb_column et_pb_column_1_5 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
+                                            <div class="et_pb_module et_pb_image et_pb_image_0 et_animated et-waypoint">
+                                                <a href="https://iiis.tsinghua.edu.cn/wuyi/" target="_blank"><span
+                                                        class="et_pb_image_wrap has-box-shadow-overlay">
+                                                        <div class="box-shadow-overlay"></div>
+                                                        <img width="200" height="270" src="img/yi-wu.jpg" alt=""
+                                                            title="" srcset="img/yi-wu.jpg 250w, img/yi-wu.jpg 200w"
+                                                            sizes="(max-width: 250px) 100vw, 250px" class="wp-image-369"
+                                                            style="object-fit: cover; width: 200px; height: 220px" />
+                                                    </span></a>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_center et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h3><b>Yi Wu</b></h3>
+                                                    <p>
+                                                        <span style="font-weight: 400">Assistant Professor, Tsinghua
+                                                            University, Institute for
+                                                            Interdisciplinary Information Sciences</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Edwin Zhang - 4th -->
+                                        <div
+                                            class="et_pb_column et_pb_column_1_5 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough">
+                                            <div class="et_pb_module et_pb_image et_pb_image_1 et_animated et-waypoint">
+                                                <a href="https://eddie.win/" target="_blank"><span
+                                                        class="et_pb_image_wrap has-box-shadow-overlay">
+                                                        <div class="box-shadow-overlay"></div>
+                                                        <img width="200" height="270" src="img/eddie-zhang.jpg" alt=""
+                                                            title="" srcset="
+                                                                    img/eddie-zhang.jpg 250w,
+                                                                    img/eddie-zhang.jpg 250w
+                                                                " sizes="(max-width: 250px) 100vw, 250px"
+                                                            class="wp-image-369"
+                                                            style="object-fit: cover; width: 200px; height: 220px" />
+                                                    </span></a>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h3><b>Edwin Zhang</b></h3>
+                                                    <p>
+                                                        <span style="font-weight: 400">OpenAI, Safety Research</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Chhavi Yadav - 5th -->
+                                        <div
+                                            class="et_pb_column et_pb_column_1_5 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough">
+                                            <div class="et_pb_module et_pb_image et_pb_image_1 et_animated et-waypoint">
+                                                <span class="et_pb_image_wrap has-box-shadow-overlay">
+                                                    <div class="box-shadow-overlay"></div>
+                                                    <img width="200" height="270" src="img/chhavi-yadav.jpg" alt=""
+                                                        title="" class="wp-image-369"
+                                                        style="object-fit: cover; width: 200px; height: 220px" />
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h3><b>Chhavi Yadav</b></h3>
+                                                    <p>
+                                                        <span style="font-weight: 400">PhD in AI from Computer Science &
+                                                            Engineering Department, UC San Diego</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+                                <!-- ***************************************************** Program Schedule ***************************************************** -->
+
+                                <div class="et_pb_section et_pb_section_3 et_animated et_section_regular">
+                                    <div class="et_pb_row et_pb_row_4">
+                                        <div
+                                            class="et_pb_column et_pb_column_4_4 et_pb_column_8 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_11 et_pb_text_align_left et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h1><b>Program Schedule</b></h1>
+                                                </div>
+                                            </div>
+                                            <div class="et_pb_text_inner">
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">8:30 - 8:40</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000;">Welcoming Remarks</h4>
+                                                        <p><br>
+                                                            <em>Given by Organizers</em>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">8:40 - 9:25</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000;">Keynote</h4>
+                                                        <p><strong>"Simple Ideas Can Have Mighty Effects: Don't Take
+                                                                LLM Fundamentals for Granted"</strong><br>
+                                                            <em>Given by Siva Reddy</em> (40 mins presentation and 5
+                                                            min QA)
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">9:25 - 9:35</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <p><strong>Coffee Break</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">9:35 - 10:00</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000; font-weight: bold;">Best Paper
+                                                            Presentation</h4>
+                                                        <p><strong>"S²Edit: Text-Guided Image Editing with Precise
+                                                                Semantic and Spatial Control"</strong><br>
+                                                            <em>Presenter: Xudong Liu</em> (15 mins presentation and
+                                                            10 mins QA)
+                                                        </p>
+                                                        <div class="abstract-toggle"
+                                                            onclick="toggleAbstract('s2edit-abstract')">
+                                                            <span class="arrow">▶</span> <span class="toggle-text">Show
+                                                                Abstract</span>
+                                                        </div>
+                                                        <div id="s2edit-abstract" class="abstract-content"
+                                                            style="display: none;">
+                                                            <p
+                                                                style="margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                                                <em>Recent advances in diffusion models have enabled
+                                                                    high-quality generation and manipulation of images
+                                                                    guided by texts, as well as concept learning from
+                                                                    images. However, naive applications of existing
+                                                                    methods to editing tasks that require fine-grained
+                                                                    control, <em>e.g.</em>, face editing, often lead to
+                                                                    suboptimal solutions with identity information and
+                                                                    high-frequency details lost during the editing
+                                                                    process, or irrelevant image regions altered due to
+                                                                    entangled concepts. In this work, we propose S²Edit,
+                                                                    a novel method based on a pre-trained text-to-image
+                                                                    diffusion model that enables personalized editing
+                                                                    with precise semantic and spatial control. We first
+                                                                    fine-tune our model to embed the identity
+                                                                    information into a learnable text token. During
+                                                                    fine-tuning, we disentangle the learned identity
+                                                                    token from attributes to be edited by enforcing an
+                                                                    orthogonality constraint in the textual feature
+                                                                    space. To ensure that the identity token only
+                                                                    affects regions of interest, we apply object masks
+                                                                    to guide the cross-attention maps. At inference
+                                                                    time, our method performs localized editing while
+                                                                    faithfully preserving the original identity with
+                                                                    semantically disentangled and spatially focused
+                                                                    identity token learned. Extensive experiments
+                                                                    demonstrate the superiority of S²Edit over
+                                                                    state-of-the-art methods both quantitatively and
+                                                                    qualitatively. Additionally, we showcase several
+                                                                    compositional image editing applications of S²Edit
+                                                                    such as makeup transfer.</em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">10:00 - 10:45</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000;">Keynote</h4>
+                                                        <p><strong>"So You Want to be a ML Researcher"</strong><br>
+                                                            <em>Given by Vered Shwartz</em> (40 mins presentation
+                                                            and 5 min QA)
+                                                        </p>
+                                                        <div class="abstract-toggle"
+                                                            onclick="toggleAbstract('vered-abstract')">
+                                                            <span class="arrow">▶</span> <span class="toggle-text">Show
+                                                                Abstract</span>
+                                                        </div>
+                                                        <div id="vered-abstract" class="abstract-content"
+                                                            style="display: none;">
+                                                            <p
+                                                                style="margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                                                <em>Getting into ML research these days can be exciting
+                                                                    but also overwhelming. In this talk, I will start by
+                                                                    sharing my own journey as an NLP researcher in a
+                                                                    decade full of "did my problem just get solved?"
+                                                                    crises. I will then share my perspective on choosing
+                                                                    meaningful research problems and general tips for
+                                                                    grad students navigating ML research.</em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">10:45 - 10:55</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <p><strong>Break</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">10:55 - 11:20</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000; font-weight: bold;">Best Paper
+                                                            Presentation</h4>
+                                                        <p><strong>"Modeling User Behavior from Adaptive Surveys
+                                                                with Supplemental Context"</strong><br>
+                                                            <em>Presenter: Daniel Patrick Scantlebury</em> (15 mins
+                                                            presentation and
+                                                            10 mins QA)
+                                                        </p>
+                                                        <div class="abstract-toggle"
+                                                            onclick="toggleAbstract('lantern-abstract')">
+                                                            <span class="arrow">▶</span> <span class="toggle-text">Show
+                                                                Abstract</span>
+                                                        </div>
+                                                        <div id="lantern-abstract" class="abstract-content"
+                                                            style="display: none;">
+                                                            <p
+                                                                style="margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                                                <em>Modeling user behavior is critical across many
+                                                                    industries where understanding preferences, intent,
+                                                                    or decisions informs personalization, targeting, and
+                                                                    strategic outcomes. Surveys have long served as a
+                                                                    classical mechanism for collecting such behavioral
+                                                                    data due to their interpretability, structure, and
+                                                                    ease of deployment. However, surveys alone are
+                                                                    inherently limited by user fatigue, incomplete
+                                                                    responses, and practical constraints on their length
+                                                                    making them insufficient for capturing user
+                                                                    behavior. In this work, we present LANTERN
+                                                                    (Late-Attentive Network for Enriched Response
+                                                                    Modeling), a modular architecture for modeling user
+                                                                    behavior by fusing adaptive survey responses with
+                                                                    supplemental contextual signals. We demonstrate the
+                                                                    architectural value of maintaining survey primacy
+                                                                    through selective gating, residual connections and
+                                                                    late fusion via cross-attention, treating survey
+                                                                    data as the primary signal while incorporating
+                                                                    external modalities only when relevant. LANTERN
+                                                                    outperforms strong survey-only baselines in
+                                                                    multi-label prediction of survey responses. We
+                                                                    further investigate threshold sensitivity and the
+                                                                    benefits of selective modality reliance through
+                                                                    ablation and rare/frequent attribute analysis.
+                                                                    LANTERN is currently deployed in production, where
+                                                                    its modularity supports scalable integration of new
+                                                                    encoders and evolving datasets. This work provides a
+                                                                    practical and extensible blueprint for behavior
+                                                                    modeling in survey-centric applications.</em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">11:20 - 12:30</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <p><strong>Poster Session and Social</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">12:30 - 13:00</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <p><strong>Lunch (provided by ICML conference)</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">13:00 - 13:45</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000;">Keynote</h4>
+                                                        <p><strong>"AReaL: a Lightweight and Scalable Reinforcement
+                                                                Learning System for LLMs and Agents"</strong><br>
+                                                            <em>Given by Yi Wu</em> (40 mins presentation and 5 min
+                                                            QA)
+                                                        </p>
+                                                        <div class="abstract-toggle"
+                                                            onclick="toggleAbstract('yi-abstract')">
+                                                            <span class="arrow">▶</span> <span class="toggle-text">Show
+                                                                Abstract</span>
+                                                        </div>
+                                                        <div id="yi-abstract" class="abstract-content"
+                                                            style="display: none;">
+                                                            <p
+                                                                style="margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                                                <em>Reinforcement Learning (RL) has become a new engine
+                                                                    for recent AI breakthroughs, from RLHF and Reasoning
+                                                                    Training to Agentic Models. In this talk, we will
+                                                                    cover the basics of RL training for LLMs and share
+                                                                    our experiences on developing our large-scale RL
+                                                                    system AReaL, for LLMs. AReaL is a fully
+                                                                    asynchronous training system for LLMs and agents.
+                                                                    The AReaL project releases a collection of
+                                                                    reproducible recipes for building SOTA LLM
+                                                                    applications, including all the training data, model
+                                                                    and scripts. We hope AReaL can help researchers
+                                                                    build their own LLM models and agents easily. Our
+                                                                    projects can be found at <a
+                                                                        href="https://github.com/inclusionAI/AReaL"
+                                                                        target="_blank">https://github.com/inclusionAI/AReaL</a>.</em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">13:45 - 13:55</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <p><strong>Break</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">13:55 - 14:20</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000;">Invited Talk</h4>
+                                                        <p><strong>"Title TBD"</strong><br>
+                                                            <em>Given by Chhavi Yadav</em> (20 mins presentation and
+                                                            5 min QA)
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">14:20 - 15:05</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000;">Keynote</h4>
+                                                        <p><strong>"Societal Implications of AGI"</strong><br>
+                                                            <em>Given by Eddie Zhang</em> (40 mins presentation and
+                                                            5 min QA)
+                                                        </p>
+                                                        <div class="abstract-toggle"
+                                                            onclick="toggleAbstract('eddie-abstract')">
+                                                            <span class="arrow">▶</span> <span class="toggle-text">Show
+                                                                Abstract</span>
+                                                        </div>
+                                                        <div id="eddie-abstract" class="abstract-content"
+                                                            style="display: none;">
+                                                            <p
+                                                                style="margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                                                <em>As the development of artificial general
+                                                                    intelligence (AGI) accelerates, questions of
+                                                                    societal impact are becoming increasingly urgent.
+                                                                    This talk explores how AGI could interface with
+                                                                    human governance structures, democratic
+                                                                    institutions, and pluralistic values. I'll outline
+                                                                    key risks posed by AGI concentration—such as
+                                                                    misalignment, surveillance, and political
+                                                                    capture—and explore frameworks for ensuring AGI
+                                                                    benefits are distributed justly. Drawing on lessons
+                                                                    from political philosophy and social choice theory,
+                                                                    I'll propose a vision of AGI as both a tool of
+                                                                    public infrastructure and a mechanism for holding
+                                                                    institutions accountable. The talk calls for machine
+                                                                    learning researchers to engage with political
+                                                                    legitimacy and the design of global participatory
+                                                                    systems.</em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">15:05 - 15:15</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <p><strong>Break</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">15:15 - 15:40</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000; font-weight: bold;">Best Paper
+                                                            Presentation</h4>
+                                                        <p><strong>"Unlocking Chemical Insights: Superior Molecular
+                                                                Representations from Intermediate Encoder
+                                                                Layers"</strong><br>
+                                                            <em>Presenter: Luis Pinto</em> (15 mins presentation and
+                                                            10 mins QA)
+                                                        </p>
+                                                        <div class="abstract-toggle"
+                                                            onclick="toggleAbstract('chemical-abstract')">
+                                                            <span class="arrow">▶</span> <span class="toggle-text">Show
+                                                                Abstract</span>
+                                                        </div>
+                                                        <div id="chemical-abstract" class="abstract-content"
+                                                            style="display: none;">
+                                                            <p
+                                                                style="margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                                                <em>Pretrained molecular encoders have become
+                                                                    indispensable in computational chemistry for tasks
+                                                                    such as property prediction and molecular
+                                                                    generation. However, the standard practice of
+                                                                    relying solely on final-layer embeddings for
+                                                                    downstream tasks may discard valuable information.
+                                                                    In this work, we challenge this convention by
+                                                                    conducting a comprehensive layer-wise analysis of
+                                                                    five diverse molecular encoders across 22 ADMET
+                                                                    property prediction tasks. Our results demonstrate
+                                                                    that embeddings from intermediate layers
+                                                                    consistently outperform final-layer representations:
+                                                                    Using fixed embeddings from the optimal intermediate
+                                                                    layers improved downstream performance by an average
+                                                                    of 5.4%, reaching gains up to 28.6%; finetuning up
+                                                                    to these intermediate layers yielded even greater
+                                                                    average improvements of 8.5%, with performance
+                                                                    increases as high as 40.8%, achieving new
+                                                                    state-of-the-art results on several benchmarks.
+                                                                    These findings highlight the importance of exploring
+                                                                    the full representational depth of molecular
+                                                                    encoders to achieve substantial performance
+                                                                    improvements and computational efficiency.</em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">15:40 - 16:05</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <h4 style="color: #000000; font-weight: bold;">Best Paper
+                                                            Presentation</h4>
+                                                        <p><strong>"ScoreMix: Improving Face Recognition via Score
+                                                                Composition in Diffusion Generators"</strong><br>
+                                                            <em>Presenter: Parsa Rahimi</em> (15 mins presentation
+                                                            and
+                                                            10 mins QA)
+                                                        </p>
+                                                        <div class="abstract-toggle"
+                                                            onclick="toggleAbstract('scoremix-abstract')">
+                                                            <span class="arrow">▶</span> <span class="toggle-text">Show
+                                                                Abstract</span>
+                                                        </div>
+                                                        <div id="scoremix-abstract" class="abstract-content"
+                                                            style="display: none;">
+                                                            <p
+                                                                style="margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                                                <em>In this paper, we propose ScoreMix, a novel yet
+                                                                    simple data augmentation strategy leveraging the
+                                                                    score compositional properties of diffusion models
+                                                                    to enhance discriminator performance, particularly
+                                                                    under scenarios with limited labeled data. By
+                                                                    convexly mixing the scores from different
+                                                                    class-conditioned trajectories during diffusion
+                                                                    sampling, we generate challenging synthetic samples
+                                                                    that significantly improve discriminative
+                                                                    capabilities in all studied benchmarks. We
+                                                                    systematically investigate class-selection
+                                                                    strategies for mixing and discover that greater
+                                                                    performance gains arise when combining classes
+                                                                    distant in the discriminator's embedding space,
+                                                                    rather than close in the generator's condition
+                                                                    space. Moreover, we empirically show that, under
+                                                                    standard metrics, the correlation between the
+                                                                    generator's learned condition space and the
+                                                                    discriminator's embedding space is minimal. Our
+                                                                    approach achieves notable performance improvements
+                                                                    without extensive parameter searches, demonstrating
+                                                                    practical advantages for training discriminative
+                                                                    models while effectively mitigating problems
+                                                                    regarding collections of large datasets. The source
+                                                                    code and the synthetic dataset will be publicly
+                                                                    available when published.</em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_with_border et_pb_row"
+                                                    style="border-bottom: 1px solid #ccc; padding-bottom: 15px;">
+                                                    <div class="et_pb_column et_pb_column_1_4"
+                                                        style="text-align: right; padding-right: 15px;">
+                                                        <h4 style="color: #000000;">16:05 - 17:30</h4>
+                                                    </div>
+                                                    <div class="et_pb_column et_pb_column_3_4">
+                                                        <p><strong>Poster Session and Social</strong></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_12 et_pb_text_align_left et_pb_bg_layout_light">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="et_pb_with_border et_pb_row et_pb_row_5">
+                                    <div
+                                            class="et_pb_column et_pb_column_4_4 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_13  et_pb_text_align_left et_pb_bg_layout_light">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="et_pb_with_border et_pb_row et_pb_row_6">
+                                    <div
+                                            class="et_pb_column et_pb_column_1_4 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_0  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#x7d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_1  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe01d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                            class="et_pb_column et_pb_column_3_4 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_14  et_pb_text_align_left et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>Keynote Talk 1</h3>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="et_pb_with_border et_pb_row et_pb_row_8">
+                                    <div
+                                            class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#x7d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_3  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                        </div>
+                                    </div>
+                                    <div
+                                            class="et_pb_column et_pb_column_3_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_text_inner">
+                                                <h3>QA and Break</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="et_pb_with_border et_pb_row et_pb_row_8">
+                                    <div
+                                            class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#x7d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_3  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe01d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                            class="et_pb_column et_pb_column_3_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_text_inner">
+                                                <h3>Keynote Talk 2</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="et_pb_with_border et_pb_row et_pb_row_8">
+                                    <div
+                                            class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#x7d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div
+                                            class="et_pb_column et_pb_column_3_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_text_inner">
+                                                <h3>QA and Break</h3>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="et_pb_with_border et_pb_row et_pb_row_8">
+                                    <div
+                                            class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#x7d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_3  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe01d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                            class="et_pb_column et_pb_column_3_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_text_inner">
+                                                <h3>Keynote Talk 3</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="et_pb_with_border et_pb_row et_pb_row_8">
+                                    <div
+                                            class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#x7d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div
+                                            class="et_pb_column et_pb_column_3_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_text_inner">
+                                                <h3>QA and Break</h3>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="et_pb_with_border et_pb_row et_pb_row_8">
+                                    <div
+                                            class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#x7d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="et_pb_module et_pb_blurb et_pb_blurb_3  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_blurb_content">
+                                                <div class="et_pb_main_blurb_image"><span
+                                                        class="et_pb_image_wrap"><span
+                                                        class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">&#xe01d;</span></span>
+                                                </div>
+                                                <div class="et_pb_blurb_container">
+                                                    <h4 class="et_pb_module_header"><span>TBD</span>
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                            class="et_pb_column et_pb_column_3_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+
+
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+                                            <div class="et_pb_text_inner">
+                                                <h3>Keynote Talk 4</h3>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div> -->
+                                </div>
+                            </div>
+
+                            <div class="et_pb_section et_pb_section_5 et_section_regular">
+                                <div class="et_pb_row et_pb_row_21">
+                                    <div
+                                        class="et_pb_column et_pb_column_4_4 et_pb_column_39 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_95 et_pb_text_align_left et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h1><b>Organizers</b></h1>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="et_pb_module et_pb_divider et_pb_divider_3 et_pb_divider_position_center et_pb_space">
+                                            <div class="et_pb_divider_internal"></div>
+                                        </div>
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_96 et_pb_text_align_left et_pb_bg_layout_light">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="et_pb_row et_pb_row_22">
+                                    <!-- ***************************************************** Organizers ***************************************************** -->
+                                    <!-- ***************************************************** Organizers ***************************************************** -->
+                                    <!-- ***************************************************** Organizers ***************************************************** -->
+                                    <!-- ***************************************************** Organizers ***************************************************** -->
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#"><b>Tianyu
+                                                                Zhang</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">Mila - Quebec AI Institute, University of
+                                                        Montreal</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#"
+                                                            target="_blank"><b>Andrew Williams</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">Mila - Quebec AI Institute, University of
+                                                        Montreal</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Zhen
+                                                                Xu</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">University of Chicago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Lu
+                                                                Li</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">University of Pennsylvania</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Edwin
+                                                                Zhang</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">OpenAI</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="et_pb_row et_pb_row_23">
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Juan
+                                                                A. Rodriguez</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">Mila - Quebec AI Institute, École de Technologie
+                                                        Supérieure</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#"
+                                                            target="_blank"><b>Suyuchen Wang</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">Mila - Quebec AI Institute, University of
+                                                        Montreal</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Felix
+                                                                Friedrich</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">Hessian.AI</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#"
+                                                            target="_blank"><b>Perouz Taslakian</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">ServiceNow</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Sai
+                                                                Rajeswar Mudumba</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">ServiceNow</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="et_pb_row et_pb_row_24">
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#"
+                                                            target="_blank"><b>Spandana Gella</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">ServiceNow</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Irina
+                                                                Rish</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">Mila - Quebec AI Institute, University of
+                                                        Montreal</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                            class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3>
+                                                    <span style="font-size: medium"><a href="#" target="_blank"><b>Jie
+                                                                Fu</b></a></span>
+                                                </h3>
+                                                <p>
+                                                    <span style="
+                                                                    font-weight: 400;
+                                                                    font-size: medium;
+                                                                    color: #7e7f93;
+                                                                ">Shanghai AI Lab</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="et_pb_section et_pb_section_5 et_section_regular">
+                                <!-- <div class="et_pb_row et_pb_row_21">
+                                            <div
+                                                class="et_pb_column et_pb_column_4_4 et_pb_column_39 et_pb_css_mix_blend_mode_passthrough et-last-child"
+                                            >
+                                                <div
+                                                    class="et_pb_module et_pb_text et_pb_text_95 et_pb_text_align_left et_pb_bg_layout_light"
+                                                >
+                                                    <div class="et_pb_text_inner">
+                                                        <h1><b>Sponsors</b></h1>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="et_pb_module et_pb_divider et_pb_divider_3 et_pb_divider_position_center et_pb_space"
+                                                >
+                                                    <div class="et_pb_divider_internal"></div>
+                                                </div>
+                                                <div
+                                                    class="et_pb_module et_pb_text et_pb_text_96 et_pb_text_align_left et_pb_bg_layout_light"
+                                                ></div>
+                                            </div>
+                                        </div> -->
+                                <!-- <div class="et_pb_row et_pb_row_22">
+
+                                            <div class="et_pb_text_inner">
+                                                <img src="img/rora.png" alt="Team Rora" width="40%" />
+                                            </div>
+                                        </div> -->
+
+                                <!-- <div class="et_pb_row et_pb_row_22">
+                                            <div
+                                                class="et_pb_column et_pb_column_1_6 et_pb_column_40 et_pb_css_mix_blend_mode_passthrough"
+                                            >
+                                                <div
+                                                    class="et_pb_module et_pb_text et_pb_text_97 et_clickable et_pb_text_align_left et_pb_bg_layout_light"
+                                                >
+                                                    <div class="et_pb_text_inner">
+                                                        <h3>
+                                                            <span style="font-size: medium"
+                                                                ><a href="https://teamrora.com/" target=""_blank""
+                                                                    ><b>Team Rora</b></a
+                                                                ></span
+                                                            >
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                <!-- <div
+                                            class="et_pb_column et_pb_column_1_6 et_pb_column_40  et_pb_css_mix_blend_mode_passthrough">
+                                        <div
+                                                class="et_pb_module et_pb_text et_pb_text_97 et_clickable  et_pb_text_align_center et_pb_bg_layout_light">
+                                            <div class="et_pb_text_inner">
+                                                <h3><span style="font-size: medium;"><a
+                                                        href="https://github.com/OpenRL-Lab"
+                                                        target="_blank"><b>OpenRL Lab</b></a></span>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </article>
+    </div>
+
+    <footer id="main-footer">
+        <div id="footer-bottom">
+            <div class="container clearfix"></div>
+        </div>
+    </footer>
+    </div>
+    </div>
+
+    <div id="global-footer-content">
+        <div id="global-footer-content-inner">
+            <script src="./js/OWC-emergency-banner.js" type="text/javascript" async></script>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var et_animation_data = [
+            {
+                class: "et_pb_text_0",
+                style: "flipTop",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "0ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_text_1",
+                style: "flipTop",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "50ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_image_0",
+                style: "zoom",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "0ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_image_1",
+                style: "zoom",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "50ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_image_2",
+                style: "zoom",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "100ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_image_3",
+                style: "zoom",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "150ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_image_4",
+                style: "zoom",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "150ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_section_3",
+                style: "zoom",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "0ms",
+                intensity: "10%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+        ];
+    </script>
+    <link rel="stylesheet" id="wp-block-library-css" href="./css/style.min.css?ver=6.0.2" type="text/css" media="none"
+        onload="media='all'" />
+    <script type="text/javascript" src="./js/current-menu-item.js?ver=1.0" id="current.menu-js"></script>
+    <script type="text/javascript" id="divi-custom-script-js-extra">
+        /* <![CDATA[ */
+        var DIVI = { item_count: "%d Item", items_count: "%d Items" };
+        var et_builder_utils_params = {
+            condition: { diviTheme: true, extraTheme: false },
+            scrollLocations: ["app", "top"],
+            builderScrollLocations: { desktop: "app", tablet: "app", phone: "app" },
+            onloadScrollLocation: "app",
+            builderType: "fe",
+        };
+        var et_frontend_scripts = { builderCssContainerPrefix: "#et-boc", builderCssLayoutPrefix: "#et-boc .et-l" };
+        var et_pb_custom = {
+            ajaxurl: "https:\/\/tripods.cis.cornell.edu\/wp-admin\/admin-ajax.php",
+            images_uri: "https:\/\/tripods.cis.cornell.edu\/wp-content\/themes\/divi\/images",
+            builder_images_uri:
+                "https:\/\/tripods.cis.cornell.edu\/wp-content\/themes\/divi\/includes\/builder\/images",
+            et_frontend_nonce: "2a09c65839",
+            subscription_failed: "Please, check the fields below to make sure you entered the correct information.",
+            et_ab_log_nonce: "d87dd1361e",
+            fill_message: "Please, fill in the following fields:",
+            contact_error_message: "Please, fix the following errors:",
+            invalid: "Invalid email",
+            captcha: "Captcha",
+            prev: "Prev",
+            previous: "Previous",
+            next: "Next",
+            wrong_captcha: "You entered the wrong number in captcha.",
+            wrong_checkbox: "Checkbox",
+            ignore_waypoints: "no",
+            is_divi_theme_used: "1",
+            widget_search_selector: ".widget_search",
+            ab_tests: [],
+            is_ab_testing_active: "",
+            page_id: "324",
+            unique_test_id: "",
+            ab_bounce_rate: "5",
+            is_cache_plugin_active: "yes",
+            is_shortcode_tracking: "",
+            tinymce_uri:
+                "https:\/\/tripods.cis.cornell.edu\/wp-content\/themes\/divi\/includes\/builder\/frontend-builder\/assets\/vendors",
+            waypoints_options: [],
+        };
+        var et_pb_box_shadow_elements = [];
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="./js/scripts.min.js?ver=4.17.6" id="divi-custom-script-js"></script>
+    <script type="text/javascript" src="./js/common.js?ver=4.17.6" id="et-core-common-js"></script>
+
+    <script type="text/javascript">
+        function toggleAbstract(abstractId) {
+            const abstractContent = document.getElementById(abstractId);
+            const toggleElement = abstractContent.previousElementSibling;
+            const arrow = toggleElement.querySelector('.arrow');
+            const toggleText = toggleElement.querySelector('.toggle-text');
+
+            if (abstractContent.style.display === 'none') {
+                abstractContent.style.display = 'block';
+                toggleElement.classList.add('expanded');
+                toggleText.textContent = 'Hide Abstract';
+            } else {
+                abstractContent.style.display = 'none';
+                toggleElement.classList.remove('expanded');
+                toggleText.textContent = 'Show Abstract';
+            }
+        }
+    </script>
 </body>
 
 </html>
